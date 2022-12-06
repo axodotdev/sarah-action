@@ -1,0 +1,7 @@
+name: Test Action for Multiple Files
+description: What it says on the tin.
+
+runs:
+  using: "composite"
+  steps:
+    uses: ./one-a.yaml
