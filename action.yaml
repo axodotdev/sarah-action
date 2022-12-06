@@ -5,4 +5,4 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3
-    - uses: ./one-a.yaml
+    - uses: axodotdev/sarah-action/one-a.yaml
