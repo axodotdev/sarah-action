@@ -4,4 +4,4 @@ description: What it says on the tin.
 runs:
   using: "composite"
   steps:
-    - uses: ./one-a.yaml
+    - uses: one-a.yaml
