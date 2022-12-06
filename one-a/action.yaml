@@ -40,6 +40,6 @@ jobs:
 
   call-one-b:
     # One of three job triggers for the big file (one-b)
-    uses: ./one-b.yaml
+    uses: axodotdev/sarah-action/one-b@main
     with:
       config-word: moon
