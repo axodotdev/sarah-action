@@ -31,11 +31,11 @@ jobs:
 
   # Check that it's a PR triggered action
   label-pull:
-    if: ${{ inputs.event_name == 'pull_request' }}
+    # if: ${{ inputs.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Just a check
-        run: echo I was a PR
+        run: echo ${{ inputs.event_name }}
 
   call-one-b:
     # One of three job triggers for the big file (one-b)
