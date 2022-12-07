@@ -4,7 +4,6 @@
 name: one-a
 
 on:
-  # Triggered directly by call from one-a
   workflow_call:
     inputs:
       event_name:
