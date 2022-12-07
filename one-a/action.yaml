@@ -31,7 +31,6 @@ jobs:
 
   # Check that it's a PR triggered action
   label-pull:
-    # if: ${{ inputs.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Just a check
