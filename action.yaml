@@ -4,7 +4,7 @@ description: What it says on the tin.
 on:
   workflow_call:
     inputs:
-      event_name:
+      event-name:
         required: true
         type: string
 
@@ -33,4 +33,4 @@ runs:
     - uses: actions/checkout@v3
     - uses: axodotdev/sarah-action/one-a@main
       with:
-        event_name: "pull_request"
+        event-name: ${{ inputs.event-name }}
