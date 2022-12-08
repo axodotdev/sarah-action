@@ -10,24 +10,24 @@ name: one-a
 #         required: true
 #         type: string
 
-jobs:
-  build:
-    # Given action, just nice as a reminder for now
-    runs-on: ubuntu-latest
+runs:
+  using: "composite"
 
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+  steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo Hello, world!
+      shell: bash
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+      shell: bash
 
   # Check that it's a PR triggered action
   # label-pull:
