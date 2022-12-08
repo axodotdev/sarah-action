@@ -32,5 +32,5 @@ runs:
     #   shell: bash
     - uses: actions/checkout@v3
     - uses: axodotdev/sarah-action/one-a@main
-      with:
-        event-name: ${{ inputs.event-name }}
+      # with:
+      #   event-name: ${{ inputs.event-name }}

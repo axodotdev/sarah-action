@@ -3,12 +3,12 @@
 
 name: one-a
 
-on:
-  workflow_call:
-    inputs:
-      event-name:
-        required: true
-        type: string
+# on:
+#   workflow_call:
+#     inputs:
+#       event-name:
+#         required: true
+#         type: string
 
 jobs:
   build:
@@ -30,14 +30,14 @@ jobs:
           echo test, and deploy your project.
 
   # Check that it's a PR triggered action
-  label-pull:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Just a check
-        run: echo ${{ inputs.event_name }}
+  # label-pull:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Just a check
+  #       run: echo ${{ inputs.event_name }}
 
-  call-one-b:
-    # One of three job triggers for the big file (one-b)
-    uses: axodotdev/sarah-action/one-b@main
-    with:
-      config-word: moon
+  # call-one-b:
+  #   # One of three job triggers for the big file (one-b)
+  #   uses: axodotdev/sarah-action/one-b@main
+  #   with:
+  #     config-word: moon
