@@ -12,7 +12,7 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3
-    - uses: axodotdev/sarah-action/.github/workflows/one-a@main
-    - name: Log event name 
+    - uses: axodotdev/sarah-action/.github/workflows/one-a@two-parter
+    - name: Log event name
       run: echo Hello, {{ $inputs.event_name }}!
       shell: bash
