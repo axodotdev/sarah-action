@@ -1,48 +1,15 @@
-# Downstream file to call from one-a.yml
+# Downstream file to call from action.yml
 name: one-b
 
 on:
-  # Triggered directly by call from one-a
-  # workflow_call:
-  #   inputs:
-  #     config-word:
-  #       required: true
-  #       type: string
-  #
-  # # Triggered by the webhook
-  # workflow_dispatch:
-  #   inputs:
-  #     config-phrase:
-  #       required: false
-  #       type: string
-  #       default: anteater
-
-  # Secure trigger based on end of one-a
   workflow_run:
     workflows: ["Test Action for Multiple Files"]
     types:
       - completed
 
 jobs:
-  # call-trigger:
-  #   if: ${{ inputs.config-word }}
-  #   runs-on: ubuntu-latest
-  #
-  #   steps:
-  #     - name: Run a one-line script
-  #       run: echo Hello, ${{ inputs.config-word }}!
-
-  # We can use the event_name to put both actions 1b and 2 in the same file if we like
-  # dispatch-trigger:
-  #   if: ${{ github.event_name == 'workflow_dispatch' }}
-  #   runs-on: ubuntu-latest
-  #
-  #   steps:
-  #     - name: Run a one-line script
-  #       run: echo Hello, ${{ inputs.config-phrase }}!
 
   run-trigger:
-    # if: ${{ github.event_name == 'workflow_run' }}
     runs-on: ubuntu-latest
 
     steps:

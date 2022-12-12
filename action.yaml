@@ -14,6 +14,6 @@ runs:
     - uses: actions/checkout@v3
     - uses: axodotdev/sarah-action/.github/workflows/one-a@main
     - name: Log event name
-      if: ${{ inputs.event_name == 'workflow_dispatch' }}
+      if: ${{ inputs.event_name == 'workflow_run' }}
       run: echo Hello, ${{ inputs.event_name }}!
       shell: bash
