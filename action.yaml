@@ -4,33 +4,15 @@ description: What it says on the tin.
 on:
   workflow_call:
     inputs:
-      event-name:
+      event_name:
         required: true
         type: string
 
 runs:
   using: "composite"
   steps:
-    # - name: Dump GitHub context
-    #   id: github_context_step
-    #   run: echo '${{ toJSON(github) }}'
-    #   shell: bash
-    # - name: Dump job context
-    #   run: echo '${{ toJSON(job) }}'
-    #   shell: bash
-    # - name: Dump steps context
-    #   run: echo '${{ toJSON(steps) }}'
-    #   shell: bash
-    # - name: Dump runner context
-    #   run: echo '${{ toJSON(runner) }}'
-    #   shell: bash
-    # - name: Dump strategy context
-    #   run: echo '${{ toJSON(strategy) }}'
-    #   shell: bash
-    # - name: Dump matrix context
-    #   run: echo '${{ toJSON(matrix) }}'
-    #   shell: bash
     - uses: actions/checkout@v3
-    - uses: axodotdev/sarah-action/.github/workflows/one-a@main
-      # with:
-      #   event-name: ${{ inputs.event-name }}
+    - uses: axodotdev/sarah-action/.github/workflows/one-a@two-parter
+    - name: Log event name
+      run: echo Hello, ${{ inputs.event_name }}!
+      shell: bash
