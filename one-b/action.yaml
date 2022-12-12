@@ -19,7 +19,7 @@ on:
 
   # Secure trigger based on end of one-a
   workflow_run:
-    workflows: ["one-a"]
+    workflows: ["Test Action for Multiple Files"]
     types:
       - completed
 
