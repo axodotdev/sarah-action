@@ -12,7 +12,8 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3
-    - uses: axodotdev/sarah-action/.github/workflows/one-a@two-parter
+    - uses: axodotdev/sarah-action/.github/workflows/one-a@main
     - name: Log event name
+      if: ${{ github.event_name == 'workflow_dispatch' }}
       run: echo Hello, ${{ inputs.event_name }}!
       shell: bash
