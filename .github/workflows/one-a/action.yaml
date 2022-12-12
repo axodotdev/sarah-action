@@ -28,16 +28,3 @@ runs:
         echo Add other actions to build,
         echo test, and deploy your project.
       shell: bash
-
-  # Check that it's a PR triggered action
-  # label-pull:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Just a check
-  #       run: echo ${{ inputs.event_name }}
-
-  # call-one-b:
-  #   # One of three job triggers for the big file (one-b)
-  #   uses: axodotdev/sarah-action/one-b@main
-  #   with:
-  #     config-word: moon
