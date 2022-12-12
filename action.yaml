@@ -17,3 +17,6 @@ runs:
       if: ${{ inputs.event_name == 'workflow_run' }}
       run: echo Hello, ${{ inputs.event_name }}!
       shell: bash
+    - name: Log event name
+      if: ${{ inputs.event_name == 'workflow_run' }}
+      uses: axodotdev/sarah-action/.github/workflows/one-b@main

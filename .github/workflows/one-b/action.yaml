@@ -1,17 +1,10 @@
 # Downstream file to call from action.yml
 name: one-b
 
-on:
-  workflow_run:
-    workflows: ["Test Action for Multiple Files"]
-    types:
-      - completed
+runs:
+  using: "composite"
 
-jobs:
-
-  run-trigger:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Link logger
-        run: echo Hello, link, from the action-one-b!
+  steps:
+    - name: Link logger
+      run: echo Hello, link, from the action-one-b!
+      shell: bash
