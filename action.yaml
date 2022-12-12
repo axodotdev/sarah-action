@@ -14,5 +14,5 @@ runs:
     - uses: actions/checkout@v3
     - uses: axodotdev/sarah-action/.github/workflows/one-a@two-parter
     - name: Log event name
-      run: echo Hello, {{ $inputs.event_name }}!
+      run: echo Hello, ${{ inputs.event_name }}!
       shell: bash
