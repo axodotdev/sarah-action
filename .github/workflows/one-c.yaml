@@ -10,10 +10,9 @@ on:
         default: anteater
 
 
-runs:
-  using: "composite"
-
-  steps:
-    - name: Dispatches happen
-      run: echo Hello, dispatches, from ${{ inputs.config-phrase }}!
-      shell: bash
+jobs:
+  dispatches-happen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatches happen
+        run: echo Hello, dispatches, from ${{ inputs.config-phrase }}!
