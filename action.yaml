@@ -25,6 +25,6 @@ runs:
       uses: axodotdev/sarah-action/.github/workflows/one-b@main
     - name: Call dispatch event
       if: ${{ inputs.event_name == 'workflow_dispatch' }}
-      uses: axodotdev/sarah-action/.github/workflows/one-b@main
-      with: 
+      uses: axodotdev/sarah-action/.github/workflows/one-c@main
+      with:
         config-phrase: ${{ inputs.config-phrase }}
