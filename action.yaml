@@ -7,6 +7,10 @@ on:
       event_name:
         required: true
         type: string
+      config-phrase:
+        required: false
+        type: string
+        default: anteater
 
 runs:
   using: "composite"
@@ -14,9 +18,13 @@ runs:
     - uses: actions/checkout@v3
     - uses: axodotdev/sarah-action/.github/workflows/one-a@main
     - name: Log event name
-      if: ${{ inputs.event_name == 'workflow_run' }}
       run: echo Hello, ${{ inputs.event_name }}!
       shell: bash
-    - name: Log event name
+    - name: Call run event
       if: ${{ inputs.event_name == 'workflow_run' }}
       uses: axodotdev/sarah-action/.github/workflows/one-b@main
+    - name: Call dispatch event
+      if: ${{ inputs.event_name == 'workflow_dispatch' }}
+      uses: axodotdev/sarah-action/.github/workflows/one-b@main
+      with: 
+        config-phrase: ${{ inputs.config-phrase }}
